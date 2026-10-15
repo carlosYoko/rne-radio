@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "RNE · Radio en directo",
+  "version": "2.4.0",
+  "description": "Escucha Radio Nacional, Radio 3, Ràdio 4, Radio Clásica, Radio 5 y Radio Exterior en directo.",
+  "minimum_chrome_version": "116",
+  "permissions": ["offscreen", "storage"],
+  "host_permissions": ["https://www.rtve.es/*", "https://nowplaying.rtve.es/*"],
+  "background": { "service_worker": "build/entries/background.js", "type": "module" },
+  "action": {
+    "default_title": "RNE · Radio en directo",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/rne1-16.png", "32": "icons/rne1-32.png", "48": "icons/rne1-48.png", "128": "icons/rne1-128.png" }
+  },
+  "icons": { "16": "icons/rne1-16.png", "32": "icons/rne1-32.png", "48": "icons/rne1-48.png", "128": "icons/rne1-128.png" }
+}
