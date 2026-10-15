@@ -1,0 +1,15 @@
+node_modules/
+build/
+*.zip
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Local logs and OS metadata
+*.log
+.DS_Store
+Thumbs.db
