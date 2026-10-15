@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RNE · Radio en directo</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand"><img src="assets/logos/radio-nacional.svg" alt="RNE" width="56" height="42"><span> / radio</span></div>
+    <span class="live-label"><i></i> EN DIRECTO</span>
+  </header>
+  <main>
+    <section class="now-playing" aria-label="Reproductor">
+      <div class="eyebrow">TU COMPAÑÍA, EN DIRECTO</div>
+      <div class="player-row">
+        <div id="station-art" aria-hidden="true"><img id="station-logo" src="assets/logos/radio-nacional.svg" alt="" width="52" height="44"></div>
+        <div class="current-info">
+          <h1 id="station-name">Radio Nacional</h1>
+          <p id="status" role="status" aria-live="polite">Preparando reproductor…</p>
+        </div>
+        <button id="play" class="play-button" type="button" aria-label="Reproducir" disabled>
+          <svg id="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <svg id="stop-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M6 6h12v12H6z"/></svg>
+        </button>
+      </div>
+      <div id="current-program" class="current-program" role="status" aria-live="polite" aria-atomic="true" data-status="loading">
+        <div class="program-label">AHORA EN ANTENA</div>
+        <p id="program-name">Consultando programación…</p>
+        <p id="program-details" hidden></p>
+      </div>
+      <div id="current-song" class="current-song" role="status" aria-live="polite" aria-atomic="true" hidden>
+        <p id="song-title"></p>
+        <p id="song-artists"></p>
+      </div>
+      <div id="song-request" class="song-request" hidden>
+        <button id="request-song" type="button" disabled title="Consultar ahora la información musical de RTVE. No analiza el audio.">Obtener título de canción</button>
+        <p id="song-request-message" role="status" aria-live="polite" hidden></p>
+      </div>
+      <div class="volume-row">
+        <label for="volume">Volumen</label>
+        <input id="volume" type="range" min="0" max="100" value="80" aria-label="Volumen" disabled>
+        <output id="volume-value" for="volume">80%</output>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+    <section aria-labelledby="stations-heading">
+      <div class="section-heading"><h2 id="stations-heading">Elige tu emisora</h2><span>06 SEÑALES</span></div>
+      <div id="stations" role="group" aria-label="Emisoras de RNE"></div>
+    </section>
+  </main>
+  <footer>Radio pública. Siempre contigo. <a href="https://www.rtve.es/play/radio/" target="_blank" rel="noopener noreferrer">RTVE Play ↗</a></footer>
+  <script type="module" src="build/entries/popup.js"></script>
+</body>
+</html>
